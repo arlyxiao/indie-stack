@@ -18,6 +18,5 @@ node_modules
 
 /app/styles/tailwind.css
 
-/log/nginx.error.log
-/log/nginx.error.log
-
+log/nginx.error.log
+log/nginx.access.log

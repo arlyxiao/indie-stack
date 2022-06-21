@@ -26,8 +26,8 @@ services:
                 yarn start"
     volumes:
       - ../:/webapp
+      - /webapp/node_modules
+      - /build
     ports:
       - "3000:3000"
 
-volumes:
-  bundler_gems:
