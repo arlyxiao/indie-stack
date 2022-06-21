@@ -23,6 +23,7 @@ services:
        bash -c "touch log/nginx.access.log && touch log/nginx.error.log &&
                 yarn install &&
                 yarn setup &&
+                yarn build &&
                 yarn start"
     volumes:
       - ../:/webapp
