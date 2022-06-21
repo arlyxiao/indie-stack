@@ -20,7 +20,7 @@ services:
       context: ./docker/webapp
       dockerfile: Dockerfile
     command: >
-       bash -c "mkdir log && touch log/nginx.access.log && touch log/nginx.error.log &&
+       bash -c "touch log/nginx.access.log && touch log/nginx.error.log &&
                 yarn install &&
                 yarn setup &&
                 yarn start"
