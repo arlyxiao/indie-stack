@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Remix Notes",
+  title: "Mindoc.run: 有趣的文档记录，不一样的世界视角",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -42,6 +42,11 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+
+        {typeof document === "undefined"
+          ? "__STYLES__"
+          : null}
+          
       </head>
       <body className="h-full">
         <Outlet />

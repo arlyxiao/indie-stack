@@ -1,36 +1,64 @@
 import { Link } from "@remix-run/react";
 
 import { useOptionalUser } from "~/utils";
+import styled from "styled-components";
+
+const Box = styled("div")`
+  color: red;
+`;
 
 export default function Index() {
   const user = useOptionalUser();
   return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-     <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+    <main className="relative min-h-screen bg-white">
+
+
+<div className="container mx-auto">
+  <div className="flex items-center justify-between py-6 lg:py-10">
+    <a href="/" className="flex items-center">
+ 
+      <p className="font-body text-2xl font-bold text-primary dark:text-white">
+        Mindoc
+      </p>
+    </a>
+  
+
+
+     <ul className="flex items-center">
                 {user ? (
+                  <li className="group relative mr-6 mb-1">
                   <Link
                     to="/notes"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-yellow-700 shadow-sm hover:bg-yellow-50 sm:px-8"
+                    className="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
                   >
                     View Notes for {user.email}
                   </Link>
+                  </li>
                 ) : (
-                  <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <Link
+                  <>
+                  
+<li className="group relative mr-6 mb-1">                    
+<Link
                       to="/join"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-yellow-700 shadow-sm hover:bg-yellow-50 sm:px-8"
+                      className="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
                     >
-                      Sign up
+                      注册
                     </Link>
+                    </li>
+                    <li className="group relative mr-6 mb-1"> 
                     <Link
                       to="/login"
-                      className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 font-medium text-white hover:bg-yellow-600  "
+                      className="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
                     >
-                      Log In
+                      登录
                     </Link>
-                  </div>
+                    </li>
+                  </>
                 )}
+              </ul>
+
               </div>
+</div>
     </main>
   );
 }
